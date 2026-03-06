@@ -102,7 +102,7 @@ const Signin = () => {
       {/* <!-- ===== SignIn Form Start ===== --> */}
       <section className="pb-12.5 pt-32.5 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
         <div className="z-1 max-w-c-1016 px-7.5 pb-7.5 lg:px-15 lg:pt-15 relative mx-auto pt-10 xl:px-20 xl:pt-20">
-          <div className="-z-1 bg-linear-to-t dark:bg-linear-to-t absolute left-0 top-0 h-2/3 w-full rounded-lg from-transparent to-[#dee7ff47] dark:to-[#252A42]"></div>
+          <div className="-z-1 bg-linear-to-t dark:bg-linear-to-t absolute left-0 top-0 h-2/3 w-full rounded-lg from-transparent to-[#d7f3e747] dark:to-[#252A42]"></div>
           <div className="bottom-17.5 -z-1 absolute left-0 h-1/3 w-full">
             <Image
               src="/images/shape/shape-dotted-light.svg"
@@ -328,7 +328,7 @@ const Signin = () => {
                     />
                     <span className="group flex h-[1lh] items-center">
                       <span
-                        className={`flex h-5 min-w-[20px] items-center justify-center rounded border-gray-300 bg-gray-100 text-blue-600 dark:border-gray-600 dark:bg-gray-700 ${
+                        className={`flex h-5 min-w-[20px] items-center justify-center rounded border-gray-300 bg-gray-100 text-primary dark:border-gray-600 dark:bg-gray-700 ${
                           data?.remember && "!bg-primary"
                         }`}
                       >

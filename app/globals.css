@@ -11,22 +11,22 @@
   --color-transparent: transparent;
   --color-stroke: #eeeeee;
   --color-strokedark: #2d2f40;
-  --color-hoverdark: #252a42;
+  --color-hoverdark: #173229;
   --color-titlebg: #adfff8;
   --color-titlebg2: #ffeac2;
   --color-titlebgdark: #46495a;
-  --color-btndark: #292e45;
+  --color-btndark: #19362c;
   --color-white: #ffffff;
-  --color-black: #181c31;
-  --color-blackho: #2c3149;
-  --color-blacksection: #1c2136;
-  --color-primary: #006bff;
-  --color-primaryho: #0063ec;
+  --color-black: #101f19;
+  --color-blackho: #1a332a;
+  --color-blacksection: #12271f;
+  --color-primary: #0ea371;
+  --color-primaryho: #0c8b60;
   --color-meta: #20c5a8;
   --color-waterloo: #757693;
   --color-manatee: #999aa1;
   --color-alabaster: #fbfbfb;
-  --color-zumthor: #edf5ff;
+  --color-zumthor: #e9f8f2;
   --color-socialicon: #d1d8e0;
 
   --text-metatitle: 12px;
@@ -276,7 +276,7 @@ pre {
 /* Constrain background effects to the centered content area. */
 .site-bg {
   position: relative;
-  background-color: #0b1536;
+  background-color: #071a14;
   /* Wider center area to match portal-style layouts. */
   --site-content-max: 1640px;
   --site-gutter: 1rem;
@@ -291,9 +291,9 @@ pre {
   right: max(var(--site-gutter), calc((100vw - var(--site-content-max)) / 2));
   pointer-events: none;
   z-index: 0;
-  background-color: #071225;
+  background-color: transparent;
   background-image:
-    radial-gradient(620px 360px at 50% 28%, rgba(96, 255, 200, 0.06), rgba(7,18,37,0) 45%),
+    radial-gradient(620px 360px at 50% 28%, rgba(96, 255, 200, 0.08), rgba(7,26,20,0) 45%),
     url('/images/background/small-blur.svg'),
     repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px),
     repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px);
@@ -311,7 +311,7 @@ pre {
   right: max(var(--site-gutter), calc((100vw - var(--site-content-max)) / 2));
   pointer-events: none;
   z-index: 0;
-  background: linear-gradient(180deg, rgba(2,6,12,0.1) 0%, rgba(2,6,12,0.28) 100%);
+  background: transparent;
 }
 
 /* Keep the header always fixed and above the content. */
@@ -330,7 +330,7 @@ pre {
     background-position: center 6% , right 6rem top;
     background-size: 140% auto, 22rem auto, 28rem 28rem, 28rem 28rem;
   }
-  .site-bg::after { background: linear-gradient(180deg, rgba(2,6,12,0.06) 0%, rgba(2,6,12,0.24) 100%); }
+  .site-bg::after { background: transparent; }
 }
 
 @media (min-width: 768px) {

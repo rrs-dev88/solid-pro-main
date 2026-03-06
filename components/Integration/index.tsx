@@ -298,7 +298,7 @@ const Integration = () => {
               viewport={{ once: true }}
               className="animate_top w-1/6"
             >
-              <div className="h-[15px] w-[15px] rounded-full bg-[#016BFF]"></div>
+              <div className="h-[15px] w-[15px] rounded-full bg-[#0EA371]"></div>
             </MotionDiv>
 
             <MotionDiv

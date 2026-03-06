@@ -17,7 +17,7 @@ const Contact = () => {
       {/* <!-- ===== Contact Start ===== --> */}
       <section id="support" className="px-4 md:px-8 2xl:px-0">
         <div className="max-w-c-1390 px-7.5 lg:px-15 lg:pt-15 relative mx-auto pt-10 xl:px-20 xl:pt-20">
-          <div className="-z-1 bg-linear-to-t dark:bg-linear-to-t absolute left-0 top-0 h-2/3 w-full rounded-lg from-[#fff] to-[#dee7ff47] dark:from-transparent dark:to-[#24283E]"></div>
+          <div className="-z-1 bg-linear-to-t dark:bg-linear-to-t absolute left-0 top-0 h-2/3 w-full rounded-lg from-[#fff] to-[#d7f3e747] dark:from-transparent dark:to-[#24283E]"></div>
           <div className="-z-1 absolute bottom-[-255px] left-0 h-full w-full">
             <Image
               src="./images/shape/shape-dotted-light.svg"
@@ -108,7 +108,7 @@ const Contact = () => {
                         className="peer sr-only"
                       />
                       <span className="group flex h-[1lh] items-center">
-                        <span className="group-peer-checked:!bg-primary flex h-5 min-w-[20px] items-center justify-center rounded-sm border-gray-300 bg-gray-100 text-blue-600 dark:border-gray-600 dark:bg-gray-700">
+                        <span className="group-peer-checked:!bg-primary flex h-5 min-w-[20px] items-center justify-center rounded-sm border-gray-300 bg-gray-100 text-primary dark:border-gray-600 dark:bg-gray-700">
                           <svg
                             className="group-peer-checked:opacity-100 opacity-0"
                             width="10"

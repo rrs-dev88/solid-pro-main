@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`dark:bg-black ${inter.className} site-bg pt-20`}>
         <NextTopLoader
-          color="#006BFF"
+          color="#0EA371"
           crawlSpeed={300}
           showSpinner={false}
           shadow="none"
