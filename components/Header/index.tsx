@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <>
       <header
-        className="app-header-fixed z-[99999] w-full border-b border-white/10 bg-white/85 py-4 shadow-sm backdrop-blur-md dark:border-white/5 dark:bg-[#0b1f19]/80"
+        className="app-header-fixed z-[99999] w-full border-b border-slate-300/70 bg-[#eceff1]/85 py-4 shadow-sm backdrop-blur-md dark:border-white/5 dark:bg-[#0b1f19]/80"
       >
         <div className="max-w-c-1390 relative mx-auto items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
           <div className="flex w-full items-center justify-between xl:w-1/4">

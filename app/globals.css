@@ -272,11 +272,38 @@ pre {
   @apply bg-stroke text-black dark:bg-blackho dark:text-white;
 }
 
+/* Theme variables for centered site background in light/dark modes. */
+:root {
+  --site-page-bg: #eceff1;
+  --site-center-bg: #eef1f3;
+  --site-center-glow: radial-gradient(
+    620px 360px at 50% 28%,
+    rgba(14, 163, 113, 0.03),
+    rgba(238, 241, 243, 0) 45%
+  );
+  --site-grid-line: rgba(42, 54, 64, 0.045);
+  --site-blur-opacity: 0.08;
+  --site-blur-blend: normal;
+}
+
+.dark {
+  --site-page-bg: #071a14;
+  --site-center-bg: #071a14;
+  --site-center-glow: radial-gradient(
+    620px 360px at 50% 28%,
+    rgba(96, 255, 200, 0.08),
+    rgba(7, 26, 20, 0) 45%
+  );
+  --site-grid-line: rgba(255, 255, 255, 0.02);
+  --site-blur-opacity: 0.9;
+  --site-blur-blend: screen;
+}
+
 
 /* Constrain background effects to the centered content area. */
 .site-bg {
   position: relative;
-  background-color: #071a14;
+  background-color: var(--site-page-bg);
   /* Wider center area to match portal-style layouts. */
   --site-content-max: 1640px;
   --site-gutter: 1rem;
@@ -291,15 +318,14 @@ pre {
   right: max(var(--site-gutter), calc((100vw - var(--site-content-max)) / 2));
   pointer-events: none;
   z-index: 0;
-  background-color: transparent;
+  background-color: var(--site-center-bg);
   background-image:
-    radial-gradient(620px 360px at 50% 28%, rgba(96, 255, 200, 0.08), rgba(7,26,20,0) 45%),
-    url('/images/background/small-blur.svg'),
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px);
-  background-repeat: no-repeat, no-repeat, repeat, repeat;
-  background-position: center 12%, right top, 0 0, 0 0;
-  background-size: 80% auto, 42rem auto, 40px 40px, 40px 40px;
+    var(--site-center-glow),
+    repeating-linear-gradient(0deg, var(--site-grid-line) 0, var(--site-grid-line) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, var(--site-grid-line) 0, var(--site-grid-line) 1px, transparent 1px, transparent 40px);
+  background-repeat: no-repeat, repeat, repeat;
+  background-position: center 12%, 0 0, 0 0;
+  background-size: 80% auto, 40px 40px, 40px 40px;
 }
 
 .site-bg::after {
@@ -311,7 +337,12 @@ pre {
   right: max(var(--site-gutter), calc((100vw - var(--site-content-max)) / 2));
   pointer-events: none;
   z-index: 0;
-  background: transparent;
+  background-image: url('/images/background/small-blur.svg');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 42rem auto;
+  opacity: var(--site-blur-opacity);
+  mix-blend-mode: var(--site-blur-blend);
 }
 
 /* Keep the header always fixed and above the content. */
@@ -327,10 +358,14 @@ pre {
 
 @media (max-width: 768px) {
   .site-bg::before {
-    background-position: center 6% , right 6rem top;
-    background-size: 140% auto, 22rem auto, 28rem 28rem, 28rem 28rem;
+    background-position: center 6%, 0 0, 0 0;
+    background-size: 140% auto, 28rem 28rem, 28rem 28rem;
   }
-  .site-bg::after { background: transparent; }
+
+  .site-bg::after {
+    background-position: right 6rem top;
+    background-size: 22rem auto;
+  }
 }
 
 @media (min-width: 768px) {
