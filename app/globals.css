@@ -271,3 +271,49 @@ pre {
 .active-tab {
   @apply bg-stroke text-black dark:bg-blackho dark:text-white;
 }
+
+
+/* Site background SVG (decorative) applied directly to the body wrapper.
+   Using a direct background avoids stacking-context issues with body pseudo-elements. */
+.site-bg {
+  background-color: #0b1016;
+  background-image:
+    radial-gradient(600px 360px at 50% 28%, rgba(96, 255, 200, 0.06), rgba(11,16,22,0) 45%),
+    url('/images/background/small-blur.svg'),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px);
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+  /* Ensure grid lines use the same fixed size and origin so they're aligned across the whole viewport */
+  background-position: center 12% , right top, 0 0, 0 0;
+  background-size: 80% auto, 42rem auto, 40px 40px, 40px 40px;
+  background-attachment: fixed, fixed, fixed, fixed;
+  mix-blend-mode: normal;
+}
+
+.site-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(2,6,12,0.12) 0%, rgba(2,6,12,0.32) 100%);
+  z-index: 0;
+}
+
+/* Keep the header always fixed and above the content. */
+.app-header-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+}
+
+
+
+@media (max-width: 768px) {
+  .site-bg {
+    background-position: center 6% , right 6rem top;
+    background-size: 140% auto, 22rem auto, 28rem 28rem, 28rem 28rem;
+  }
+  .site-bg::after { background: linear-gradient(180deg, rgba(2,6,12,0.06) 0%, rgba(2,6,12,0.25) 100%); }
+}

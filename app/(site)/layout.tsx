@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black ${inter.className}`}>
+      <body className={`dark:bg-black ${inter.className} site-bg pt-20`}>
         <NextTopLoader
           color="#006BFF"
           crawlSpeed={300}

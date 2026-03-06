@@ -3,7 +3,7 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import GlobalSearchModal from "../GlobalSearch";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
@@ -11,34 +11,16 @@ import menuData from "./menuData";
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
-  const [stickyMenu, setStickyMenu] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
 
   const { data: session } = useSession();
 
   const pathUrl = usePathname();
 
-  // Sticky menu
-  const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-  });
-
   return (
     <>
       <header
-        className={`z-999 fixed left-0 top-0 w-full py-7 ${
-          stickyMenu
-            ? "py-4! bg-white shadow-sm transition duration-100 dark:bg-black"
-            : ""
-        }`}
+        className="app-header-fixed z-[99999] w-full border-b border-white/10 bg-white/85 py-4 shadow-sm backdrop-blur-md dark:border-white/5 dark:bg-black/70"
       >
         <div className="max-w-c-1390 relative mx-auto items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
           <div className="flex w-full items-center justify-between xl:w-1/4">
