@@ -12,6 +12,7 @@ import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
+import AgeGate from "@/components/Common/AgeGate";
 import { integrations } from "@/integration.config";
 
 export const metadata: Metadata = {
@@ -22,20 +23,22 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Brands />
-      <Feature />
-      <About />
-      <FeaturesTab />
-      <FunFact />
-      <Integration />
-      <CTA />
-      <FAQ />
-      <Testimonial />
-      <Pricing />
-      <Contact />
-      {integrations?.isSanityEnabled && <Blog />}
-    </main>
+    <AgeGate>
+      <main>
+        <Hero />
+        <Brands />
+        <Feature />
+        <About />
+        <FeaturesTab />
+        <FunFact />
+        <Integration />
+        <CTA />
+        <FAQ />
+        <Testimonial />
+        <Pricing />
+        <Contact />
+        {integrations?.isSanityEnabled && <Blog />}
+      </main>
+    </AgeGate>
   );
 }
